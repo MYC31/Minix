@@ -1733,6 +1733,15 @@ static struct proc * pick_proc(void)
 		TRACE(VF_PICKPROC, printf("cpu %d queue %d empty\n", cpuid, q););
 		continue;
 	}
+	/* modify */
+	register struct proc *bp;
+	for (bp=rp; bp != NULL; bp=bp->p_nextready) {
+		if (bp->deadline > 0) {
+			rp = bp;
+			break;
+		}
+	}
+	/* modify */
 	assert(proc_is_runnable(rp));
 	if (priv(rp)->s_flags & BILLABLE)	 	
 		get_cpulocal_var(bill_ptr) = rp; /* bill for system time */

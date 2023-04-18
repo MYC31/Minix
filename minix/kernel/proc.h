@@ -128,6 +128,8 @@ struct proc {
 
   u64_t p_signal_received;
 
+  long deadline;	/* deadline of current process */
+
 #if DEBUG_TRACE
   int p_schedules;
 #endif

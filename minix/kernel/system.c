@@ -269,6 +269,9 @@ void system_init(void)
   map(SYS_SCHEDULE, do_schedule);	/* reschedule a process */
   map(SYS_SCHEDCTL, do_schedctl);	/* change process scheduler */
 
+  /* Deadline */
+  map(SYS_CHRT, do_chrt); /* change deadline of a process */
+
 }
 /*===========================================================================*
  *				get_priv				     *

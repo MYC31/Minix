@@ -52,6 +52,7 @@ SRCS+=  \
 	sys_abort.c \
 	sys_clear.c \
 	sys_cprof.c \
+	sys_chrt.c \
 	sys_diagctl.c \
 	sys_endsig.c \
 	sys_exec.c \
